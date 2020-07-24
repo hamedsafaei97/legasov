@@ -1,7 +1,7 @@
 import base64
 
 from django.conf import settings
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
@@ -20,5 +20,5 @@ def recognize(request):
             temp.close()
         file_addr = settings.BASE_DIR + '/' + tmp_file_name
         is_known = recognize_face(file_addr)
-        return HttpResponse(is_known)
-    return HttpResponse("data field is missing", status=400)
+        return JsonResponse({'status': is_known}, status=200)
+    return JsonResponse({'error': "data field is missing."}, status=400)

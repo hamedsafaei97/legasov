@@ -34,7 +34,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String FILE_UPLOAD_URL = "";
+    private static final String FILE_UPLOAD_URL = "127.0.0.1:8000/recognize/";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private OutputStream outputStream;
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> map = new HashMap<>();
-                map.put("image", imageString);
+                map.put("data", imageString);
                 return map;
             }
         };

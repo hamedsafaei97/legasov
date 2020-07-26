@@ -55,6 +55,7 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String FILE_UPLOAD_URL = "http://192.168.1.9:8080/recognize/";
+//    private static final String FILE_UPLOAD_URL = "http://51.195.19.78:8080/recognize/";
 
     private String imageDataBase64;
 
